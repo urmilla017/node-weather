@@ -15,6 +15,9 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+// process.env.PORT for heroku or 3000 as fallback default
+const port = process.env.PORT || 3000;
+
 // app.com
 // app.com/about
 // app.com/help
@@ -167,6 +170,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000.');
+app.listen(port, () => {
+    console.log('server is up on port ' + port);
 });
